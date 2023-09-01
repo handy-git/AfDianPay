@@ -1,0 +1,35 @@
+# 示例商品
+1000点券:
+  # 购买地址(无实际意义)，玩家使用指令/afdian send 1000点券 后提醒内容
+  url: "https://www.mcbbs.net"
+  # 购买价格(无实际意义)，玩家使用/afdian send 1000点券 后提醒内容
+  price: "10RMB"
+  # 给予点券数量 0为不给予
+  point: 10000
+  # 执行自定义指令，后台身份执行 ${player} 为玩家名 ${shop} 为商品名
+  # 也支持 PlaceholderAPI 变量
+  command:
+    - 'say ${player} 成功充值了 ${shop}'
+    - 'say ${player} 氪金了1000点券'
+  # 执行成功后发送消息提醒
+  # 消息类型
+  # 发给玩家本身的消息类型 actionBar (1.9+) ; title (1.9+) ; message(全版本)
+  # 发给全体玩家本身的消息类型 allActionBar (1.9+) ; allTitle (1.9+) ; allMessage(全版本)
+  # 也支持 PlaceholderAPI 变量
+  message:
+    - '[message] &7感谢 &e${player} &7赞助了服务器,本次赞助商品: &e${shop}'
+    - '[title] 赞助标题:&7感谢 &e${player} &7赞助了服务器,本次赞助商品: &e${shop}'
+    - '[actionBar] &7感谢 &e${player} &7赞助了服务器,本次赞助商品: &e${shop}'
+
+# 示例商品
+648大礼包:
+  url: "https://www.mcbbs.net"
+  price: "648RMB"
+  point: 0
+  command:
+    - 'say ${player} 成功充值了 ${shop}'
+    - 'say ${player} 氪金了大礼包'
+  message:
+    - '[message] &7感谢 &e${player} &7赞助了服务器,本次赞助商品: &e${shop}'
+    - '[title] 赞助标题:&7感谢 &e${player} &7赞助了服务器,本次赞助商品: &e${shop}'
+    - '[actionBar] &7感谢 &e${player} &7赞助了服务器,本次赞助商品: &e${shop}'

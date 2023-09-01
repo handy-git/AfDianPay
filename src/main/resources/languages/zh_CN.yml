@@ -1,0 +1,52 @@
+# 没权限时候提醒
+noPermission: "&4你没有权限执行该命令"
+
+# 重载插件提醒
+reloadMsg: "&a插件重载完成"
+
+# placeholderAPI提醒
+placeholderAPISucceedMsg: "&a成功加载placeholderApi,启用自定义变量功能!"
+placeholderAPIFailureMsg: "&4未找到placeholderApi,未启用自定义变量功能!"
+
+# PlayerPoints提醒
+playerPointsSucceedMsg: "&a成功加载PlayerPoints,启用点券相关功能!"
+playerPointsFailureMsg: "&4未找到PlayerPoints,未启用点券相关功能!"
+
+# /afdian help指令管理员出现的提醒
+helps:
+  - ""
+  - " &3AfDian&8&l▪ &7米饭出品～"
+  - ""
+  - " &7命令: &f/afdian &8[...]"
+  - " &7参数:"
+  - "   &8&l- &f reload   &7重载配置文件"
+  - "   &8&l- &f convert [MySQL|SQLite]  &7转换数据"
+  - "   &8&l- &f look [订单号]  &7查看订单详情"
+  - "   &8&l- &f reward [订单号]  &7手动根据订单号发奖励"
+  - "   &8&l- &f send [商品名]  &7在聊天框内发送爱发电链接"
+
+paramFailureMsg: "&c参数错误."
+noPlayerFailureMsg: "&c该命令只能玩家执行."
+
+noToken: "&8[&c✘&8] &7config.yml中爱发电配置错误,插件未工作"
+noPlayer: "&8[&c✘&8] &7服务器内没有名称为 ${player} 的玩家"
+onlinePlayer: "&8[&c✘&8] &7玩家 &a${player} 不在线不发奖励"
+notPlayerName: "&8[&c✘&8] &7订单没有留言玩家名称"
+notShopName: "&8[&c✘&8] &7订单没有设置商品名称"
+noShopName: "&8[&c✘&8] &7没有这个商品 &a${shop} &7的购买链接"
+noOrder: "&8[&c✘&8] &7还没有 &a${order} &7这个订单"
+notOrder: "&8[&c✘&8] &7订单不存在"
+notReward: "&8[&c✘&8] &7订单 &a${order} &7已经给予过奖励了"
+opReward: "&8[&a✔&8] &7处理订单 &a${order} &7完成,请&a后台日志&7查看处理结果"
+exist: "&a赞助过"
+notExist: "&a没赞助过"
+copy: "&r   &8[&a点击复制&8]"
+
+oneMsg: "&a______________________/ &e${shop} &a\\_______________________\n"
+twoMsg: "&7| &a商品名称: &d${shop} &a售价: &d${price} &a点击&d&n此处查看&a购买 &7|\n"
+threeMsg: "&a---------------------------------------------------------"
+
+
+# 用于输入指令时候tab自动提醒帮助(只建议翻译,不建议更改)
+tabHelp:
+  orderNumber: "请输入订单号"

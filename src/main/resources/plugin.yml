@@ -1,0 +1,40 @@
+name: AfDianPay
+main: cn.handyplus.afdian.pay.AfDianPay
+version: 1.0.5
+author: handy
+api-version: 1.13
+website: https://ricedoc.handyplus.cn/wiki/AfDianPay/log/
+softdepend: [ PlaceholderAPI,Vault,PlayerPoints ]
+description: 爱发电支付
+commands:
+  afDianPay:
+    description: 爱发电支付
+    aliases: [ afdian ]
+permissions:
+  afDianPay.*:
+    description: 爱发电支付
+    children:
+      afDianPay.convert: true
+      afDianPay.reload: true
+      afDianPay.reward: true
+      afDianPay.send: true
+      afDianPay.look: true
+      afDianPay.getIp: true
+  afDianPay.convert:
+    description: 转化数据库
+    default: op
+  afDianPay.reload:
+    description: 重载插件
+    default: op
+  afDianPay.reward:
+    description: 根据订单号发送奖励
+    default: op
+  afDianPay.send:
+    description: 发送赞助链接
+    default: true
+  afDianPay.look:
+    description: 查看订单信息
+    default: true
+  afDianPay.getIp:
+    description: 获取地址
+    default: op
