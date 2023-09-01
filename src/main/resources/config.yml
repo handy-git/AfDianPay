@@ -1,0 +1,27 @@
+# 语言文件 [可选 中文简体:zh_CN]
+language: zh_CN
+
+# 是否开启更新提醒,建议开启
+isCheckUpdate: true
+
+# op登录时候是否发送更新提醒
+isCheckUpdateToOpMsg: true
+
+# 爱发电开发者信息,不正确的话插件不加载
+afDianToken: 123456
+afDianUserId: 123456
+
+# 拉取订单间隔,单位秒，不建议小于180
+jobTime: 180
+
+# 是否只发奖励
+# 多子服连接同一个mysql的时候
+# 一个主服设置为false表示拉订单并发奖励(这个主服例如登陆服，玩家都必须进去过)
+# 其他子服都设置为true表示只发奖励不拉订单，避免重复拉取
+onlyReward: false
+
+# 拉取订单提醒消息
+jobMsg: true
+
+# 激活码
+sign: 123456
