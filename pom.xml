@@ -6,13 +6,13 @@
 
     <groupId>cn.handyplus.afdian.pay</groupId>
     <artifactId>AfDianPay</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spigot-api.vesion>1.20.1-R0.1-SNAPSHOT</spigot-api.vesion>
-        <lombok.version>1.18.28</lombok.version>
-        <HandyLib.version>3.7.4</HandyLib.version>
+        <spigot-api.vesion>1.20.2-R0.1-SNAPSHOT</spigot-api.vesion>
+        <lombok.version>1.18.30</lombok.version>
+        <HandyLib.version>3.7.8</HandyLib.version>
         <VaultAPI.vesion>1.7</VaultAPI.vesion>
         <PlayerPoints.version>3.2.6</PlayerPoints.version>
         <placeholderapi.version>2.10.5</placeholderapi.version>

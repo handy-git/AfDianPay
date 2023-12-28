@@ -24,8 +24,8 @@ public enum TabListEnum {
      */
     FIRST(Arrays.asList("convert", "reload", "reward", "send", "look", "getIp"), 0, null, 1),
 
-    REWARD_TWO(Collections.singletonList(BaseUtil.getLangMsg("tabHelp.orderNumber")), 1, "reward", 2),
-    LOOK_TWO(Collections.singletonList(BaseUtil.getLangMsg("tabHelp.orderNumber")), 1, "look", 2),
+    REWARD_TWO(Collections.singletonList(BaseUtil.getMsgNotColor("tabHelp.orderNumber")), 1, "reward", 2),
+    LOOK_TWO(Collections.singletonList(BaseUtil.getMsgNotColor("tabHelp.orderNumber")), 1, "look", 2),
     CONVERT_ONE(Arrays.asList(BaseConstants.MYSQL, BaseConstants.SQLITE), 1, "convert", 2),
     ;
     /**

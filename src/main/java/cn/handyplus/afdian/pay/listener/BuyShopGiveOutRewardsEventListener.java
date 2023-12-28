@@ -46,7 +46,7 @@ public class BuyShopGiveOutRewardsEventListener implements Listener {
         Optional<AfDianOrder> afDianOrderOptional = AfDianOrderService.getInstance().findById(id);
         // 是否为空
         if (!afDianOrderOptional.isPresent()) {
-            MessageUtil.sendConsoleMessage(BaseUtil.getLangMsg("notOrder"));
+            MessageUtil.sendConsoleMessage(BaseUtil.getMsgNotColor("notOrder"));
             return;
         }
         AfDianOrder afDianOrder = afDianOrderOptional.get();
@@ -83,18 +83,18 @@ public class BuyShopGiveOutRewardsEventListener implements Listener {
         }
         // 是否发过奖励
         if (afDianOrder.getResult() && StrUtil.isEmpty(afDianOrder.getErrorMsg())) {
-            MessageUtil.sendConsoleMessage(BaseUtil.getLangMsg("notReward"));
+            MessageUtil.sendConsoleMessage(BaseUtil.getMsgNotColor("notReward").replace("${order}", afDianOrder.getOutTradeNo()));
             return null;
         }
         // 玩家是否存在
         Player player = Bukkit.getPlayerExact(afDianOrder.getPlayerName());
         if (player == null) {
-            MessageUtil.sendConsoleMessage(BaseUtil.getLangMsg("noPlayer").replace("${player}", afDianOrder.getPlayerName()));
+            MessageUtil.sendConsoleMessage(BaseUtil.getMsgNotColor("noPlayer").replace("${player}", afDianOrder.getPlayerName()));
             return null;
         }
         // 玩家是否在线
         if (!player.isOnline()) {
-            MessageUtil.sendConsoleMessage(BaseUtil.getLangMsg("onlinePlayer").replace("${player}", afDianOrder.getPlayerName()));
+            MessageUtil.sendConsoleMessage(BaseUtil.getMsgNotColor("onlinePlayer").replace("${player}", afDianOrder.getPlayerName()));
             return null;
         }
         return player;

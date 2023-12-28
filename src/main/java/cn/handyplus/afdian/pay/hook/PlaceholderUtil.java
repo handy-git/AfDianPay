@@ -44,7 +44,7 @@ public class PlaceholderUtil extends PlaceholderExpansion {
         // %afDianPay_exist%
         if ("exist".equals(identifier)) {
             Integer count = AfDianOrderService.getInstance().findByPlayerName(player.getName());
-            return plugin.getConfig().getString(identifier, BaseUtil.getLangMsg(count > 0 ? "exist" : "notExist"));
+            return plugin.getConfig().getString(identifier, BaseUtil.getMsgNotColor(count > 0 ? "exist" : "notExist"));
         }
         // %afDianPay_number%
         if ("number".equals(identifier)) {

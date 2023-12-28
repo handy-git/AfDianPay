@@ -1,6 +1,5 @@
 package cn.handyplus.afdian.pay.job;
 
-import cn.handyplus.afdian.pay.AfDianPay;
 import cn.handyplus.afdian.pay.bo.QueryOrderBo;
 import cn.handyplus.afdian.pay.bo.QueryOrderData;
 import cn.handyplus.afdian.pay.bo.QueryOrderDataList;
@@ -13,10 +12,9 @@ import cn.handyplus.afdian.pay.util.EventUtil;
 import cn.handyplus.lib.core.CollUtil;
 import cn.handyplus.lib.core.JsonUtil;
 import cn.handyplus.lib.core.StrUtil;
+import cn.handyplus.lib.expand.adapter.HandySchedulerUtil;
 import cn.handyplus.lib.util.BaseUtil;
 import cn.handyplus.lib.util.MessageUtil;
-import org.bukkit.OfflinePlayer;
-import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -40,16 +38,13 @@ public class QueryOrderJob {
         // 判断是否激活爱发电
         AfDianUtil.pingResult();
         // 定时任务
-        new BukkitRunnable() {
-            @Override
-            public void run() {
-                // 判断是否可以ping成功
-                if (!AfDianPayConstants.PING_RESULT) {
-                    return;
-                }
-                getOrder();
+        HandySchedulerUtil.runTaskTimerAsynchronously(() -> {
+            // 判断是否可以ping成功
+            if (!AfDianPayConstants.PING_RESULT) {
+                return;
             }
-        }.runTaskTimerAsynchronously(AfDianPay.getInstance(), 60, 20L * ConfigUtil.CONFIG.getInt("jobTime", 60));
+            getOrder();
+        }, 60, 20L * ConfigUtil.CONFIG.getInt("jobTime", 60));
     }
 
     /**
@@ -125,18 +120,12 @@ public class QueryOrderJob {
                 // 异常订单数据处理
                 if (StrUtil.isEmpty(afDianOrder.getPlayerName())) {
                     afDianOrder.setResult(true);
-                    afDianOrder.setErrorMsg(BaseUtil.getLangMsg("notPlayerName"));
-                } else {
-                    OfflinePlayer offlinePlayer = BaseUtil.getOfflinePlayer(afDianOrder.getPlayerName());
-                    if (!offlinePlayer.hasPlayedBefore()) {
-                        afDianOrder.setResult(true);
-                        afDianOrder.setErrorMsg(BaseUtil.getLangMsg("noPlayer").replace("${player}", afDianOrder.getPlayerName()));
-                    }
+                    afDianOrder.setErrorMsg(BaseUtil.getMsgNotColor("notPlayerName"));
                 }
                 // 异常商品名称处理
                 if (StrUtil.isEmpty(afDianOrder.getShopName())) {
                     afDianOrder.setResult(true);
-                    afDianOrder.setErrorMsg(BaseUtil.getLangMsg("notShopName"));
+                    afDianOrder.setErrorMsg(BaseUtil.getMsgNotColor("notShopName"));
                 }
                 afDianOrderList.add(afDianOrder);
             }

@@ -32,7 +32,7 @@ public class AfDianUtil {
         AfDianResponse ping = AfDianUtil.ping();
         // 判断是否激活爱发电
         if (!"200".equals(ping.getEc())) {
-            MessageUtil.sendConsoleMessage(BaseUtil.getLangMsg("noToken"));
+            MessageUtil.sendConsoleMessage(BaseUtil.getMsgNotColor("noToken"));
             AfDianPayConstants.PING_RESULT = false;
         } else {
             AfDianPayConstants.PING_RESULT = true;
