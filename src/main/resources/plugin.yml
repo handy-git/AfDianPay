@@ -1,6 +1,6 @@
 name: AfDianPay
 main: cn.handyplus.afdian.pay.AfDianPay
-version: 1.0.6
+version: 1.0.7
 author: handy
 api-version: 1.13
 website: https://ricedoc.handyplus.cn/wiki/AfDianPay/log/
@@ -35,7 +35,7 @@ permissions:
     default: true
   afDianPay.look:
     description: 查看订单信息
-    default: true
+    default: op
   afDianPay.getIp:
     description: 获取地址
     default: op

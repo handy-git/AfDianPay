@@ -6,6 +6,7 @@ import cn.handyplus.lib.command.IHandyCommandEvent;
 import cn.handyplus.lib.constants.BaseConstants;
 import cn.handyplus.lib.db.Db;
 import cn.handyplus.lib.db.SqlManagerUtil;
+import cn.handyplus.lib.db.enums.DbTypeEnum;
 import cn.handyplus.lib.util.AssertUtil;
 import cn.handyplus.lib.util.BaseUtil;
 import cn.handyplus.lib.util.HandyConfigUtil;
@@ -43,7 +44,7 @@ public class ConvertCommand implements IHandyCommandEvent {
         // 参数是否正常
         AssertUtil.notTrue(args.length < 2, sender, BaseUtil.getMsgNotColor("paramFailureMsg"));
         String storageMethod = args[1];
-        if (!BaseConstants.MYSQL.equalsIgnoreCase(storageMethod) && !BaseConstants.SQLITE.equalsIgnoreCase(storageMethod)) {
+        if (!DbTypeEnum.MySQL.getType().equalsIgnoreCase(storageMethod) && !DbTypeEnum.SQLite.getType().equalsIgnoreCase(storageMethod)) {
             MessageUtil.sendMessage(sender, BaseUtil.getMsgNotColor("paramFailureMsg"));
             return;
         }

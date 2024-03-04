@@ -3,13 +3,14 @@ package cn.handyplus.afdian.pay.command;
 import cn.handyplus.afdian.pay.constants.TabListEnum;
 import cn.handyplus.afdian.pay.util.ConfigUtil;
 import cn.handyplus.lib.annotation.HandyCommand;
-import cn.handyplus.lib.util.MessageUtil;
-import cn.handyplus.lib.command.HandyCommandFactory;
+import cn.handyplus.lib.command.HandyCommandWrapper;
 import cn.handyplus.lib.util.BaseUtil;
+import cn.handyplus.lib.util.MessageUtil;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.util.StringUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,12 +25,12 @@ import java.util.List;
 public class AfDianPayCommand implements TabExecutor {
 
     @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
         // 判断指令是否正确
         if (args.length < 1) {
             return sendHelp(sender);
         }
-        boolean rst = HandyCommandFactory.getInstance().onCommand(sender, cmd, label, args, BaseUtil.getMsgNotColor("noPermission"));
+        boolean rst = HandyCommandWrapper.onCommand(sender, cmd, label, args, BaseUtil.getMsgNotColor("noPermission"));
         if (!rst) {
             return sendHelp(sender);
         }
@@ -37,7 +38,7 @@ public class AfDianPayCommand implements TabExecutor {
     }
 
     @Override
-    public List<String> onTabComplete(CommandSender sender, Command cmd, String label, String[] args) {
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
         List<String> completions = new ArrayList<>();
         List<String> commands = new ArrayList<>();
         if (sender.hasPermission("afDianPay.reload")) {

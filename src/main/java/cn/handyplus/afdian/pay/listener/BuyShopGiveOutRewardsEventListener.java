@@ -10,6 +10,7 @@ import cn.handyplus.lib.annotation.HandyListener;
 import cn.handyplus.lib.core.CollUtil;
 import cn.handyplus.lib.core.StrUtil;
 import cn.handyplus.lib.util.BaseUtil;
+import cn.handyplus.lib.util.HandyConfigUtil;
 import cn.handyplus.lib.util.MessageUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -18,6 +19,7 @@ import org.bukkit.event.Listener;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * 玩家购买发奖励事件
@@ -95,6 +97,12 @@ public class BuyShopGiveOutRewardsEventListener implements Listener {
         // 玩家是否在线
         if (!player.isOnline()) {
             MessageUtil.sendConsoleMessage(BaseUtil.getMsgNotColor("onlinePlayer").replace("${player}", afDianOrder.getPlayerName()));
+            return null;
+        }
+        // 是否存在当前商品
+        Set<String> keySet = HandyConfigUtil.getKey(ConfigUtil.SHOP_CONFIG, null);
+        if (!keySet.contains(afDianOrder.getShopName())) {
+            MessageUtil.sendConsoleMessage(BaseUtil.getMsgNotColor("configNotShopName").replace("${shop}", afDianOrder.getShopName()));
             return null;
         }
         return player;
