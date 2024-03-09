@@ -1,6 +1,6 @@
 name: AfDianPay
 main: cn.handyplus.afdian.pay.AfDianPay
-version: 1.0.7
+version: 1.0.8
 author: handy
 api-version: 1.13
 website: https://ricedoc.handyplus.cn/wiki/AfDianPay/log/
