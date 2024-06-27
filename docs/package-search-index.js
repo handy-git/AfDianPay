@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"cn.handyplus.afdian.pay"},{"l":"cn.handyplus.afdian.pay.api"},{"l":"cn.handyplus.afdian.pay.event"},{"l":"所有程序包","u":"allpackages-index.html"}];updateSearchResults();

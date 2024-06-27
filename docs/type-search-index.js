@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"cn.handyplus.afdian.pay","l":"AfDianPay"},{"p":"cn.handyplus.afdian.pay.api","l":"AfDianPayApi"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"cn.handyplus.afdian.pay.event","l":"BuyShopGiveOutRewardsEvent"}];updateSearchResults();
