@@ -1,1 +1,1 @@
-typeSearchIndex = [{"p":"cn.handyplus.afdian.pay","l":"AfDianPay"},{"p":"cn.handyplus.afdian.pay.api","l":"AfDianPayApi"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"cn.handyplus.afdian.pay.event","l":"BuyShopGiveOutRewardsEvent"}];updateSearchResults();
+typeSearchIndex = [{"p":"cn.handyplus.afdian.pay","l":"AfDianPay"},{"p":"cn.handyplus.afdian.pay.api","l":"AfDianPayApi"},{"p":"cn.handyplus.afdian.pay.event","l":"BuyShopGiveOutRewardsEvent"},{"l":"所有类和接口","u":"allclasses-index.html"}];updateSearchResults();
